@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title> {{ trans('test_job.site_title') }}</title>
+    <title> {{ trans('RoiUp HR.site_title') }}</title>
 
 
 <!-- Scripts -->

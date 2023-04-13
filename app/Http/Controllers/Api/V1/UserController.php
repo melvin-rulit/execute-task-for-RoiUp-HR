@@ -111,23 +111,27 @@ class UserController extends Controller
 
         } else {
             if ($incoming_random_value > 900) {
-                $procent = 70;
-                return $incoming_random_value * ($procent / 100);
+                $procent = 80;
+                $result_win = $incoming_random_value * ($procent / 100);
+                return  round($result_win);
 
             } elseif ($incoming_random_value > 600) {
 
-                $procent = 50;
-                return $incoming_random_value * ($procent / 100);
+                $procent = 60;
+                $result_win = $incoming_random_value * ($procent / 100);
+                return round($result_win);
 
             } elseif ($incoming_random_value > 300) {
 
-                $procent = 30;
-                return $incoming_random_value * ($procent / 100);
+                $procent = 20;
+                $result_win = $incoming_random_value * ($procent / 100);
+                return round($result_win);
 
             } elseif ($incoming_random_value < 300) {
 
                 $procent = 10;
-                return $incoming_random_value * ($procent / 100);
+                $result_win = $incoming_random_value * ($procent / 100);
+                return round($result_win);
             }
 
 

@@ -62,7 +62,7 @@
         <template #row-details="row">
 
             <b-row>
-                <button type="button" class="btn btn-danger"  @click="DeleteClient(row.item)">Yuo want to remove {{ row.item.name}} from DB?</button>
+                <button type="button" class="btn btn-danger"  @click="DeleteClient(row.item)">Ви впевнені, що хочете видалити клієнта  {{ row.item.name}} з БД?</button>
 
             </b-row>
 

@@ -61,7 +61,6 @@ export default {
                             this.$router.push({ name: 'Register' });
                         }, 1000)
 
-           
 
         },
 

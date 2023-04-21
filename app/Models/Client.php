@@ -26,10 +26,19 @@ class Client extends Model
         'updated_at',
     ];
 
-    public function feellocky(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
+    // public function getAllClients()
+    // {
+    //     return Client::where('id', '!=', 1)->get();
+    // }
 
-        return $this->hasMany(FeelLocky::class);
+    public static function get_client_id_whis_link($link)
+    {
+        $client = Client::where('generation_links', '=', $link)->get();
+        return $client[0]['id'];
     }
 
+    public function feellocky(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(FeelLocky::class);
+    }
 }

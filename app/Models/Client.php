@@ -26,11 +26,6 @@ class Client extends Model
         'updated_at',
     ];
 
-    // public function getAllClients()
-    // {
-    //     return Client::where('id', '!=', 1)->get();
-    // }
-
     public static function get_client_id_whis_link($link)
     {
         $client = Client::where('generation_links', '=', $link)->get();

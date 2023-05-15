@@ -1,5 +1,4 @@
 <template>
-
     <div class="container-fluid d-flex h-100  align-items-center main_container">
 
         <div class="row bg-white">
@@ -18,16 +17,15 @@
         </div>
 
     </div>
-
 </template>
 
 <script>
 
-import {mapActions} from "vuex";
+import { mapActions } from "vuex";
 
 export default {
 
-    data(){
+    data() {
         return {
 
         }
@@ -36,6 +34,7 @@ export default {
     computed: {
 
         link() {
+
             return this.$route.query.link;
         },
 
@@ -44,22 +43,21 @@ export default {
     methods: {
         ...mapActions(['DeleteLink']),
 
-        Delete_link(){
+        Delete_link() {
 
 
-
-            this.$store.dispatch('DeleteLink', {link: this.link});
+            this.$store.dispatch('DeleteLink', { link: this.link });
 
             let loader = this.$loading.show({
-                            color: '#0080ff',
-                            backgroundColor: '#ffffff',
-                        });
+                color: '#0080ff',
+                backgroundColor: '#ffffff',
+            });
 
-                        setTimeout(() => {
+            setTimeout(() => {
 
-                            loader.hide()
-                            this.$router.push({ name: 'Register' });
-                        }, 1000)
+                loader.hide()
+                this.$router.push({ name: 'Register' });
+            }, 1000)
 
 
         },

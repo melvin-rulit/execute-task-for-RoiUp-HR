@@ -49,7 +49,7 @@
 
                     <b-button variant="secondary" class="otstup" @click="HistoryLock()">Історія</b-button>
 
-                    <i class="fa-solid fa-house fonawesome-icons"></i> <a :href="'/home/' + link" class="otstup">Повернутися на головну</a>
+                    <i class="fa-solid fa-house fonawesome-icons"></i> <a :href="'/client/' + link" class="otstup">Повернутися на головну</a>
 
                     <b-button variant="success" class="otstup" @click="GetRandom_integer_and_insert_DB()">Мені пощастить
                     </b-button>
@@ -89,7 +89,7 @@ export default {
 
         HistoryLock() {
 
-            axios.post('api/v1/query_history_for_FEEL_LOCK', {
+            axios.post('api/query_history_for_FEEL_LOCK', {
                 link: this.link,
             }).then((response) => {
                 this.result_history_fields = response.data.data
@@ -99,12 +99,12 @@ export default {
 
         GetRandom_integer_and_insert_DB() {
 
-            axios.post('api/v1/insert_and_FEEL_LOCK_result', {
+            axios.post('api/insert_and_FEEL_LOCK_result', {
                 link: this.link,
             }).then((response) => {
                 this.show_block = true;
                 this.tern_on_spiner_wait = true;
-                this.result_lose_or_integer_after_save_feelLocky_in_DB = response.data
+                this.result_lose_or_integer_after_save_feelLocky_in_DB = response.data['message']
 
                 setTimeout(() => {
                     this.tern_on_spiner_wait = false;

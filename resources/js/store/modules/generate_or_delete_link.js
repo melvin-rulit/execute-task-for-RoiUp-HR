@@ -25,7 +25,7 @@ export default {
 
         GenerateLink({commit}, {link}) {
 
-            axios.post(`api/v1/send_value_for_get_new_link`, {link: link})
+            axios.post(`api/send_value_for_get_new_link`, {link: link})
                 .then((response) => {
                     commit('newLink', response.data)
                 })
@@ -33,7 +33,7 @@ export default {
 
         DeleteLink({commit}, {link}) {
 
-            axios.post(`api/v1/send_value_for_delete_link`, {link: link})
+            axios.post(`api/send_value_for_delete_link`, {link: link})
                 .then((response) => {
                     commit('getLink', response.data.data)
                 })

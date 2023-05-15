@@ -25,7 +25,8 @@ export default {
 
         GetAllClients({commit}) {
 
-            axios.get(`api/v1/get_all_clients`)
+            // axios.get(`api/admins_panel/fhuefhreifyegyrfgtweeuyg`)
+            axios.get(`api/client`)
                 .then((response) => {
                     commit('getСlient', response.data.data)
                 })

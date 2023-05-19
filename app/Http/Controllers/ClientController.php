@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\CreateClientRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ClientsResource;
 use App\Repositories\Interfaces\ClientRepositoryInterface;
@@ -39,7 +39,7 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreUserRequest $request)
+    public function store(CreateClientRequest $request)
     {
         $random_string = Str::random(30);
 
@@ -60,7 +60,6 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-
         $edit_client = Client::find($client->id);
 
         if ($request['row_name'] === 'name') {
@@ -69,6 +68,8 @@ class ClientController extends Controller
 
             $edit_client->phone_number = $request['field_value_phone_number'];
         }
+
+        $edit_client->phone_number = $request['field_value_phone_number'];
 
         $edit_client->save();
 

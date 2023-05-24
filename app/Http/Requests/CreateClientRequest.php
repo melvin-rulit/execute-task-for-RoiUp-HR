@@ -4,19 +4,19 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreUserRequest extends FormRequest
+class CreateClientRequest extends FormRequest
 {
 
-    public function rules()
+    public function rules(): array
     {
         return [
-            'name' => 'required|min:3',
+            'name' => 'required|string|min:3',
             'phone_number' => 'required',
 
         ];
     }
 
-    public function messages()
+    public function messages(): array
     {
         return [
             'name.required' => 'Имя обязательно для заполнения',

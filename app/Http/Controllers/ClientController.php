@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Http\Requests\CreateClientRequest;
+use App\Models\Client;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ClientsResource;
+use App\Http\Requests\CreateClientRequest;
 use App\Repositories\Interfaces\ClientRepositoryInterface;
-use App\Models\Client;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
 class ClientController extends Controller
 {
@@ -68,8 +67,6 @@ class ClientController extends Controller
 
             $edit_client->phone_number = $request['field_value_phone_number'];
         }
-
-        $edit_client->phone_number = $request['field_value_phone_number'];
 
         $edit_client->save();
 

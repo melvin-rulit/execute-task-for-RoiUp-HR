@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class FeelLocky extends Model
 {
-    public $timestamps = false;
-
     protected $fillable = [
         'client_id',
         'feel_locky',

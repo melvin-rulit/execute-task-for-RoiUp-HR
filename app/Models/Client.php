@@ -3,10 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Client extends Model
 {
+    use HasFactory;
 
     public $table = 'clients';
 
@@ -22,15 +23,7 @@ class Client extends Model
         'name',
         'phone_number',
         'generation_links',
-        'created_at',
-        'updated_at',
     ];
-
-    public static function get_client_id_whis_link($link)
-    {
-        $client = Client::where('generation_links', '=', $link)->get();
-        return $client[0]['id'];
-    }
 
     public function feellocky(): \Illuminate\Database\Eloquent\Relations\HasMany
     {

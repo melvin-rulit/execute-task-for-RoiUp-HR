@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\Interfaces\FeelLockyRepositoryInterface;
-use App\Http\Resources\ClientsResource;
-use App\Http\Resources\HistoryResource;
-use Illuminate\Http\Request;
-use App\Models\FeelLocky;
 use App\Models\Client;
+use Illuminate\Http\Request;
+use App\Http\Resources\HistoryResource;
+use App\Repositories\Interfaces\FeelLockyRepositoryInterface;
 
 class FeelLockyController extends Controller
 {
@@ -34,7 +32,6 @@ class FeelLockyController extends Controller
 
     public function history_feelLock(Request $request)
     {
-
         $client = Client::where('generation_links',$request->link)->first();
 
         foreach ($client->feellocky as $value) {
